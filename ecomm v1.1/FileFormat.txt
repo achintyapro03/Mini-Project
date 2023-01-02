@@ -1,0 +1,42 @@
+Format of files
+
+PortalToPlatform.txt
+---------------------
+
+Each line of request has the PortalID (a single word) as the first token and 
+a requestID (single word) as the second token, followed by one of the below
+* Start
+    should return the list of categories available, using category names from Globals.java
+* List <Category> 
+    where <Catgeory> is one of the category names in Globals.java
+    should get back the list of products of the specified category
+* Buy <ProductID> <numItems> 
+    where ProductID was the value sent by the Seller earlier
+    
+Thus, a typical line in the file would be:
+<PortalID> <RequestID> List Book
+or
+<PortalID> <RequestID> Buy seller1-book1 3
+or
+<PortalID> <RequestID> Start
+
+PlatformToPortal.txt
+---------------------
+
+Each set of lines in this is a response to a specific request from a portal.
+Thus, for each request, there would be an appropriate response:
+For Start, the response should be:
+<PortalID> <RequestID> category1 category2 ... (where categories are as in Globals getCategoryName()
+
+For List, the response should be a series of lines, one for each product returned, where each
+line has
+<Portal ID> <RequestID> ProductName1 productUniqueName1 price1 quanitityAvailable1
+<Portal ID> <RequestID> ProductName2 productUniqueName2 price2 quanitityAvailable2
+...
+...
+
+For Buy, the response should be
+<PortalID> <ResponseID> Success 
+or
+<PortalID> <ResponseID> Failure
+
