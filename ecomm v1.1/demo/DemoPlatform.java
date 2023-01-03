@@ -72,7 +72,7 @@ public class DemoPlatform extends Platform {
 		{
 			Boolean flag = false;
 			for(Seller seller: seller_list){
-				if(seller.buyProduct(params[3], Character.getNumericValue(params[4].charAt(0)))){
+				if(seller.buyProduct(params[3],Integer.parseInt(params[4]))){
 					flag = true;
 					break;
 				}
