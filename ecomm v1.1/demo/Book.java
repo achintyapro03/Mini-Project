@@ -1,51 +1,44 @@
 package demo;
 
 import ecomm.Globals;
-import ecomm.Product;
 
-public class Book extends Product{
-    private String productName, productUniqueName, ProductID;
-    private int price, quanitityAvailable;
+public class Book extends MyProduct {
+    private String productName, ProductID;
+    private float price;
+    private int quanitityAvailable;
     private Globals.Category category;
 
-    public Book(String productName, String productUniqueName, String ProductID, int price, int quanitityAvailable) 
-    {
+    public Book(String productName, String ProductID, float price, int quanitityAvailable) {
         super();
         this.category = Globals.Category.Book;
         this.price = price;
         this.productName = productName;
-        this.productUniqueName = productUniqueName;
         this.quanitityAvailable = quanitityAvailable;
         this.ProductID = ProductID;
     }
-    public Globals.Category getCategory(){
+
+    public Globals.Category getCategory() {
         return this.category;
     }
-	public String getName()
-    {
+
+    public String getName() {
         return productName;
     }
-	public  String getProductID()
-    {
+
+    public String getProductID() {
         return ProductID;
     }
-	public  float getPrice()
-    {
+
+    public float getPrice() {
         return price;
     }
-	public  int getQuantity()
-    {
+
+    public int getQuantity() {
         return quanitityAvailable;
     }
 
-    public void UpdateQuantity(int Quantity)
-    {
+    public void UpdateQuantity(int Quantity) {
         this.quanitityAvailable = Quantity;
     }
-    public String toString()
-    {
-        return this.productName + " "+this.productUniqueName+" "+this.price+" "+this.quanitityAvailable;
-    }
+
 }
-
-

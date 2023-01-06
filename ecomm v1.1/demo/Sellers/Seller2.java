@@ -9,22 +9,22 @@ import java.util.ArrayList;
 import demo.Mobile;
 import demo.Book;
 
-public class Seller1 extends Seller {
+public class Seller2 extends Seller {
 
     // id is passed in by the class that instantiates sub-type of seller
     private String myID;
     private ArrayList<MyProduct> products;
     private Platform platform;
 
-    public Seller1(String id) {
+    public Seller2(String id) {
         super(id);
         this.products = new ArrayList<MyProduct>();
         this.myID = id;
-        products.add(new Mobile("Redmi", "Redmi_Note_10", 19999.99f, 30));
-        products.add(new Book("Game_of_Thrones", "GOT", 1500.50f, 78));
-        products.add(new Mobile("Apple", "iphone100", 59999.99f, 20));
-        products.add(new Mobile("Samsung", "SammySO", 28000.00f, 110));
-        products.add(new Book("SasthaGOT", "SasthaGOTOP", 800.5f, 210));
+        products.add(new Mobile("Karbonn", "Karbonn_Note_55", 5999.99f, 10));
+        products.add(new Book("Harry_Potter", "HP125", 2000.50f, 53));
+        products.add(new Mobile("Apple", "iphone_9_x", 70000.99f, 20));
+        products.add(new Mobile("OnePlus", "OnePlus10", 23000.00f, 80));
+        products.add(new Book("Alchemist", "Alch1234", 500.5f, 15));
     }
 
     // ID of seller.

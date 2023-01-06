@@ -3,14 +3,14 @@
 #include "ProductSorter.h"
 using namespace std;
 
-vector<string> split(string str)
+vector<string> split(string str, char delimiter)
 {
-    str = str + " ";
+    str = str + delimiter;
     vector<string> words;
     string word = "";
     for (int i = 0; i < str.size(); i++)
     {
-        if (str[i] == ' ')
+        if (str[i] == delimiter)
         {
             words.push_back(word);
             word = "";
@@ -25,7 +25,7 @@ void sorter(vector<string> lines, string order)
 {
     vector<vector<string>> params;
     for (auto x : lines)
-        params.push_back(split(x));
+        params.push_back(split(x, ' '));
     ProductSorter ProSorter = ProductSorter();
     ProSorter.setParameter(order);
     sort(params.begin(), params.end(), ProSorter);
@@ -73,7 +73,7 @@ int main()
             vector<string> stringDiffPortal;
             for (string x : lines)
             {
-                vector<string> params = split(x);
+                vector<string> params = split(x, ' ');
                 if (params[0] == to_string(portalID))
                     output[params[1]].push_back(x);
                 else

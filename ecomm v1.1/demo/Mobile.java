@@ -1,54 +1,44 @@
 package demo;
 
-import ecomm.Product;
 import ecomm.Globals;
 
-public class Mobile extends Product {
-    private String  productName, productUniqueName, ProductID;
-    private int price, quanitityAvailable;
+public class Mobile extends MyProduct {
+    private String productName, ProductID;
+    private float price;
+    private int quanitityAvailable;
     private Globals.Category category;
-    
-    public Mobile(String productName, String productUniqueName, String ProductID, int price, int quanitityAvailable) {
+
+    public Mobile(String productName, String ProductID, float price, int quanitityAvailable) {
         super();
         this.category = Globals.Category.Mobile;
         // this.portalId = portalId;
         this.price = price;
         this.productName = productName;
-        this.productUniqueName = productUniqueName;
         this.quanitityAvailable = quanitityAvailable;
         this.ProductID = ProductID;
     }
 
-    public Globals.Category getCategory(){
+    public Globals.Category getCategory() {
         return this.category;
     }
-	public String getName(){
+
+    public String getName() {
         return this.productName;
     }
-	public String getProductID(){
+
+    public String getProductID() {
         return this.ProductID;
     }
-	public float getPrice(){
+
+    public float getPrice() {
         return this.price;
     }
-	public int getQuantity(){
+
+    public int getQuantity() {
         return this.quanitityAvailable;
     }
-    public String productUniqueName(){
-        return this.productUniqueName;
-    }
 
-    public String toString()
-    {
-        return this.productName + " "+this.productUniqueName+" "+this.price+" "+this.quanitityAvailable;
-    }
-
-    public void UpdateQuantity(int Quantity)
-    {
+    public void UpdateQuantity(int Quantity) {
         this.quanitityAvailable = Quantity;
     }
 }
-
-
-
-
