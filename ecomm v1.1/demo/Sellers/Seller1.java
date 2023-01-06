@@ -51,11 +51,11 @@ public class Seller1 extends Seller {
 	// Transaction fails if incorrect productID or quantity exceeds available inventory
 	public boolean buyProduct(String productID, int quantity){
         boolean flag = false;
-        System.out.println(quantity);
+        // System.out.println(quantity);
         for(Product x : products){
             if(x.getProductID().equals(productID))
             {
-                System.out.println(x.getQuantity());
+                // System.out.println(x.getQuantity());
                 if(x.getQuantity() >= quantity) {
                     flag = true;
                     x.UpdateQuantity(x.getQuantity() - quantity);

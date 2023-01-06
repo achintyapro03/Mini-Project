@@ -49,9 +49,9 @@ int main()
     vector<string> sortParam;
 
     string instruction = "";
-
-    int portalID = 1;
-    int requestID = 12;
+    srand((unsigned)time(NULL));
+    int portalID = rand();
+    int requestID = rand();
 
     unordered_map<string, string> sortOrder; // maps requestID to parameter of sorting
     map<string, vector<string>> output;
@@ -70,12 +70,16 @@ int main()
                 lines.push_back(line);
                 // cout << line << endl;
             }
-
+            vector<string> stringDiffPortal;
             for (string x : lines)
             {
                 vector<string> params = split(x);
-                // if (sortOrder[params[1]] != "")
-                output[params[1]].push_back(x);
+                if (params[0] == to_string(portalID))
+                    output[params[1]].push_back(x);
+                else
+                {
+                    stringDiffPortal.push_back(x);
+                }
             }
 
             for (auto x : output)
@@ -91,8 +95,10 @@ int main()
             }
 
             Reader.close();
-            ofstream hout("PlatformToPortal.txt");
-            hout.close();
+            ofstream hout("PlatformToPortal.txt"); // Opening the file in write mode
+            for (auto line : stringDiffPortal)
+                hout << (line + '\n');
+            hout.close(); // Closing the file
 
             lines.clear();
             output.clear();

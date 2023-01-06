@@ -46,7 +46,7 @@ public class PlatformMain {
 			command = sc.next();
 			if(command.equals("Check")) pf.processRequests();
 		}	
-			
+		// sc.close();
 	}
 
 }

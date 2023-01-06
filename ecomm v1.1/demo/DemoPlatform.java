@@ -6,14 +6,13 @@ import ecomm.Globals.Category;
 import ecomm.Product;
 import java.util.*;
 import java.io.*;
-import demo.Mobile; 
-import demo.Book; 
+// import demo.Mobile; 
+// import demo.Book; 
 public class DemoPlatform extends Platform {
 
 	private ArrayList<Seller> seller_list = new ArrayList<Seller>();
 	@Override
 	public boolean addSeller(Seller aSeller) {
-		// TODO Auto-generated method stub
 		this.seller_list.add(aSeller);
 		return false;
 	}
@@ -87,7 +86,6 @@ public class DemoPlatform extends Platform {
 
 	@Override
 	public void processRequests() {
-		// TODO Auto-generated method stub
 		try {
 			File file = new File("demo/PortalToPlatform.txt");
 			Scanner Reader = new Scanner(file);
