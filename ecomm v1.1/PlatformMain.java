@@ -5,42 +5,37 @@ import demo.Sellers.*;
 
 import java.util.*;
 
-public class PlatformMain {
-
-	public static void main(String[] args) {
-
-		Platform pf = new DemoPlatform(); // replace with appropriate derived class
-
-		// create a number of sellers (of different sub-types of Seller)
-		// Assign a name (sellerID) to each of them.
-
-		// replace each of the XYZ below with the derived class name of one of the
-		// team members.
-
-		Seller s1 = new Seller1("Achintya");
-		Seller s2 = new Seller2("Adithya");
-		Seller s3 = new Seller3("Shrey");
-
+public class PlatformMain
+{
+	public static void main(String[] args)
+	{
+		Platform pf = new DemoPlatform();	// Instance of DemoPlatform
+		
+		Seller s1 = new Seller1("Achintya");	// First seller
+		Seller s2 = new Seller2("Adithya");	// Second seller
+		Seller s3 = new Seller3("Shrey");	// Third seller
+		// Adding Platform pf to 3 sellers
 		s1.addPlatform(pf);
-		s1.addPlatform(pf);
-		s1.addPlatform(pf);
-
+		s2.addPlatform(pf);
+		s3.addPlatform(pf);
+		// Adding 3 sellers to platform pf
 		pf.addSeller(s1);
 		pf.addSeller(s2);
 		pf.addSeller(s3);
 
 		Scanner sc = new Scanner(System.in);
 
-		String command;
+		String command;	// User command
 
-		while (true) {
+		while (true)
+		{
 			command = sc.next();
-			if (command.equals("Check"))
+			if (command.equals("Check"))	// Platform has to process requests from the user
 				pf.processRequests();
 			else if (command.equals("End"))
 				break;
 		}
+
 		sc.close();
 	}
-
 }
