@@ -47,7 +47,7 @@ void DemoPortal::processUserCommand(string command)
 
 	//file is opened in append mode and instruction is pasted
 	ofstream hout;
-	hout.open("demo/PortalToPlatform.txt", ios_base::app);
+	hout.open("PortalToPlatform.txt", ios_base::app);
 	this->instruction = this->instruction + '\n';
 	hout << this->instruction;
 	hout.close();
@@ -60,7 +60,7 @@ void DemoPortal::checkResponse()
 	string line;
 
 	//read from file
-	ifstream Reader("demo/PlatformToPortal.txt");
+	ifstream Reader("PlatformToPortal.txt");
 	while (getline(Reader, line))
 		lines.push_back(line);
 	Reader.close();
@@ -88,7 +88,7 @@ void DemoPortal::checkResponse()
 			cout << x.second[0] << endl;
 	}
 
-	ofstream hout("demo/PlatformToPortal.txt");	// Opening the file in write mode
+	ofstream hout("PlatformToPortal.txt");	// Opening the file in write mode
 	for (auto line: stringDiffPortal)
 		hout << (line + '\n');	//instruciton to differnet portals are pasted back
 

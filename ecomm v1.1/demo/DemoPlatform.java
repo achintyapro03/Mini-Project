@@ -108,10 +108,10 @@ public class DemoPlatform extends Platform
 		}
 
 		//functions called to append the lines array to file
-		writeToFile(lines, "demo/"+Globals.fromPlatform, true);
+		writeToFile(lines,Globals.fromPlatform, true);
 
 		//function called to clear the PortalToPlatform file
-		writeToFile(new ArrayList<String> (), "demo/"+Globals.toPlatform, false);
+		writeToFile(new ArrayList<String> (), Globals.toPlatform, false);
 	}
 
 	@Override
@@ -120,7 +120,7 @@ public class DemoPlatform extends Platform
 		// Exception handling to avoid file not found error
 		try
 		{
-			File file = new File("demo/"+Globals.toPlatform);
+			File file = new File(Globals.toPlatform);
 			Scanner Reader = new Scanner(file);
 			while (Reader.hasNextLine())
 			{
